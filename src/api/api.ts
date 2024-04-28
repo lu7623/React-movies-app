@@ -1,7 +1,7 @@
 import { DetailedMovieInfo, MovieResponse } from "./types";
 
 const BASE_URL = 'https://api.kinopoisk.dev/v1.4/movie';
-const API_KEY = 'DT0PY7M-6NK433G-G6RTK6G-ZTCNGX0';
+const API_KEY = 'BHS78EN-KJW4VD9-KAAK89K-SZWKDSQ';
 
 const options = {
   method: 'GET',
@@ -10,10 +10,10 @@ const options = {
 
 export async function GetFilmsList(page:number) {
   try {
-    const response = await fetch(BASE_URL + `?page=${page}&limit=10`, options)
+    const response = await fetch(BASE_URL + `?page=${page}&limit=10&notNullFields=name`, options)
     if (response.ok) {
       const data = await response.json() as MovieResponse;
-      return data.docs
+      return {films: data.docs, max: data.pages }
     }
     return null
   }

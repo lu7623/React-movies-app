@@ -6,6 +6,11 @@ export interface MovieResponse {
   pages: number
 }
 
+export interface MovieResults {
+  films: MovieInfo[],
+  max: number
+}
+
 export type MovieInfo = {
   id: number,
   name: string,
