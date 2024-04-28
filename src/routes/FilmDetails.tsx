@@ -17,23 +17,23 @@ export default function FilmDetails() {
   const data = useLoaderData() as DetailedMovieInfo;
   return (
     <>
-      <div className="details" onClick={(e) => e.stopPropagation()}>
+      <div className=" w-1/2" onClick={(e) => e.stopPropagation()}>
         <div className="close">
-          <Link className="closeBtn" to={url} data-testid="close"></Link>
+          <Link className="closeBtn" to={url} data-testid="close"> </Link>
         </div>
 
         <>
           <h2>{data.name.toUpperCase()}</h2>
           <h3>
-            Genres:
+            Жанры:
             {data.genres.map((type) => (
-              <span className="type" key={type.name}>
+              <span className=" mx-1 px-1 bg-slate-200" key={type.name}>
                 {type.name}
               </span>
             ))}
           </h3>
 
-          <div style={{ display: "flex" }}>
+          <div className="flex">
             <img
               src={data.poster.url ? data.poster.url : "/notAvaliable.jpg"}
               alt="film poster"
@@ -41,12 +41,12 @@ export default function FilmDetails() {
             />
           </div>
           <p>{data.description}</p>
-          <h3>Actors:</h3>
+          <h3>Актеры:</h3>
           <div className="stat">
-            {data.persons.map((pers) => (
-              <div key={pers.name}>
-                {pers.name} - {pers.profession}
-              </div>
+            {data.persons.filter((pers) => pers.profession === 'актеры').map((pers) => (
+              <span key={pers.name} className="mx-1">
+                {pers.name + ','}
+              </span>
             ))}
           </div>
         </>

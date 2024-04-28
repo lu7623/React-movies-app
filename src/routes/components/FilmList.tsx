@@ -19,10 +19,8 @@ export default function FilmsList({ data }:{data:MovieInfo[]}) {
         }}
       >
         <div
-          className="cardContainer"
-          style={
-            detailsId ? { opacity: '40%', width: '50%' } : { width: '100%' }
-          }
+          className={detailsId ? ' grid gap-2 m-2 grid-cols-2 opacity-40 w-1/2' : 'grid gap-2 m-2  grid-cols-5 w-full opacity-100'}
+         
         >
           {data && (
             data.map((film) => {
@@ -30,7 +28,7 @@ export default function FilmsList({ data }:{data:MovieInfo[]}) {
             })
           )}
         </div>
-        <Outlet />
+        {detailsId && <Outlet />}
       </div>
     </>
   );

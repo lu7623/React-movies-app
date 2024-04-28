@@ -1,4 +1,5 @@
 import FilmDetails, { detailsLoader } from './routes/FilmDetails';
+import { FilmsPage } from './routes/FilmsPage';
 import { Root, filmsLoader } from './routes/Root';
 
 
@@ -6,11 +7,10 @@ export const routerConfig = [
   {
     path: '/',
     element: <Root />,
-    loader: filmsLoader,
     children: [
       {
         path: 'page/:pageId',
-        element: <Root />,
+        element: <FilmsPage />,
         loader: filmsLoader,
         children: [
           {
