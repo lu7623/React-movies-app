@@ -1,11 +1,9 @@
-
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { MovieInfo } from '../../api/types';
 import FilmCard from './FilmCard';
 
 
 export default function FilmsList({ data }:{data:MovieInfo[]}) {
-
   const navigate = useNavigate();
   const { pageId, detailsId } = useParams();
   const url = `/page/${pageId}`;
@@ -13,7 +11,7 @@ export default function FilmsList({ data }:{data:MovieInfo[]}) {
   return (
     <>
       <div
-        style={{ display: 'flex' }}
+        className='flex'
         onClick={() => {
           detailsId && navigate(url);
         }}

@@ -15,10 +15,10 @@ export async function GetFilmsList(page:number) {
       const data = await response.json() as MovieResponse;
       return {films: data.docs, max: data.pages }
     }
-    return null
+    return {films: [], max:0 }
   }
   catch {
-    return null
+    return {films: [], max:0 }
   }
 }
 

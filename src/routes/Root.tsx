@@ -7,7 +7,6 @@ import {
   useParams,
 } from "react-router-dom";
 
-
 export async function filmsLoader({ params }: LoaderFunctionArgs) {
   const pageNum = params.pageId;
   const filmsData = await GetFilmsList(Number(pageNum));
@@ -23,11 +22,12 @@ export function Root() {
 
   return (
     <>
-      <div className="mx-10">
-        <h1 className="text-3xl font-bold underline text-red-800">Лучшие фильмы</h1>
-      
+      <main className="mx-10">
+        <h1 className="text-3xl font-bold m-3 text-slate-600">
+          Лучшие фильмы
+        </h1>
         <Outlet />
-      </div>
+      </main>
     </>
   );
 }
