@@ -27,7 +27,7 @@ export default function Pagination({ max }: { max: number }) {
           <FaAngleLeft color="grey" />
         </button>
         <button 
-          disabled={max ===0}
+          disabled={max ===0 || paginator+1>max}
           className={
             pageNum === paginator + 1
               ? "bg-orange-400 m-2 px-3  rounded"
@@ -38,7 +38,7 @@ export default function Pagination({ max }: { max: number }) {
           {paginator + 1}
         </button>
         <button
-           disabled={max ===0}
+           disabled={max ===0 || paginator+2>max}
           className={
             pageNum === paginator + 2
               ? "bg-orange-400 m-2 px-3  rounded"
@@ -49,7 +49,7 @@ export default function Pagination({ max }: { max: number }) {
           {paginator + 2}
         </button>
         <button
-           disabled={max ===0}
+           disabled={max ===0 || paginator+3>max}
           className={
             pageNum === paginator + 3
               ? "bg-orange-400 m-2 px-3  rounded"
@@ -60,7 +60,7 @@ export default function Pagination({ max }: { max: number }) {
           {paginator + 3}
         </button>
         <button
-           disabled={max ===0}
+           disabled={max ===0 || paginator+4>max}
           className={
             pageNum === paginator + 4
               ? "bg-orange-400 m-2 px-3  rounded"
@@ -71,7 +71,7 @@ export default function Pagination({ max }: { max: number }) {
           {paginator + 4}
         </button>
         <button
-           disabled={max ===0}
+           disabled={max ===0 || paginator+5>max}
           className={
             pageNum === paginator + 5
               ? "bg-orange-400 m-2 px-3  rounded"

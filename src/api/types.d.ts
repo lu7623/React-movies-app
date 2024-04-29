@@ -15,8 +15,6 @@ export type MovieInfo = {
   id: number,
   name: string,
   year: number,
-  description: string,
-  shortDescription: string,
   rating: {
     kp: number,
   },
@@ -25,7 +23,18 @@ export type MovieInfo = {
     previewUrl: string
   },
   genres: Genre[],
-  countries: Country[]
+}
+
+export type SimilarMovies = {
+  id: number,
+  name: string,
+  year: number,
+  rating: {
+    kp: number,
+  },
+  poster: {
+    url: string,
+  },
 }
 
 type Genre = {
@@ -44,9 +53,8 @@ type Person = {
 export type DetailedMovieInfo = {
   id: number,
   name: string,
-  year: number,
+  year?: number,
   description: string,
-  shortDescription: string,
   rating: {
     kp: number,
   },
@@ -54,10 +62,11 @@ export type DetailedMovieInfo = {
     url: string,
     previewUrl: string
   },
-  movieLength: number,
-  ageRating: number,
+  movieLength?: number,
+  ageRating?: number,
   lists: string[],
   genres: Genre[],
-  countries: Country[],
-  persons: Person[]
+  countries?: Country[],
+  persons: Person[],
+  similarMovies?: SimilarMovies[]
 }
